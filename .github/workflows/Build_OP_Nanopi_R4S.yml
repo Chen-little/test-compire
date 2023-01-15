@@ -19,9 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
-      with:
-        node-version: '16.x'
+      uses: actions/checkout@master
+      
     - name: Init Building Dependencies
       env:
         DEBIAN_FRONTEND: noninteractive
