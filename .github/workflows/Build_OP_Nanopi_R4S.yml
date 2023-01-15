@@ -17,6 +17,7 @@ on:
 jobs:
   OpenWrt-18_06:
     runs-on: ubuntu-latest
+    container: node:16.16.0
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
