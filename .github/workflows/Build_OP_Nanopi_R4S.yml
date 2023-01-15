@@ -26,8 +26,9 @@ jobs:
       run: |
         set +e
         docker rmi $(docker images -q)
-        sudo -E apt-get remove -y --purge nodejs azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell mysql* php* mssql-tools msodbcsql17 android*
-        sudo -E curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+        sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell mysql* php* mssql-tools msodbcsql17 android*
+        sudo -E apt install apt-transport-https curl ca-certificates software-properties-common
+        sudo -E curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
         sudo -E apt-get update -y
         sudo -E apt-get full-upgrade -y
         sudo -E apt-get install -y nodejs
