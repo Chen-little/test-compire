@@ -4,9 +4,9 @@ on:
   release:
     types: [published]
 
-#  push:
-#    branches:
-#      - master
+  push:
+    branches:
+      - master
 
   #schedule:
   #  - cron: 0 8 * * 5
@@ -15,7 +15,7 @@ on:
   #  types: [started]
 
 jobs:
-  OpenWrt-R4S: #没有配置这个默认就是叫build
+  OpenWrt-18_06:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
