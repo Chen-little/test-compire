@@ -17,9 +17,14 @@ on:
 jobs:
   OpenWrt-18_06:
     runs-on: ubuntu-latest
-    container: node:16.16.0
     steps:
     - name: Checkout Repository
+      run: |
+        sudo -E apt-get update -y
+        sudo -E apt-get full-upgrade -y
+        sudo -E apt-get remove --purge -y nodejs
+        sudo -E curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+        sudo -E apt-get install -y nodejs
       uses: actions/checkout@v2
     - name: Init Building Dependencies
       env:
